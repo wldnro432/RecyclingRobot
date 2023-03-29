@@ -4,7 +4,32 @@
 dataset
   https://drive.google.com/file/d/15uo7mcgeyLsueiHNGoNpMrutypwTf4TU/view
 
+
+
 tree
+yolov7
+├── cfg
+│   ├── baseline
+│   ├── deploy
+│   └── training
+│       └── yolov7.yaml
+├── data
+│   ├── test
+│   │   ├── images
+│   │   └── labels
+│   ├── train
+│   │   ├── images
+│   │   └── labels
+│   └── valid
+│   │   ├── images
+│   │   └── labels
+│   │── data.yaml
+│   └── hyp.scratch.custom.yaml
+│
+├──train.py
+├──yolov7.pt
+
+
   
 
 
