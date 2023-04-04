@@ -5,6 +5,10 @@ dataset
   https://drive.google.com/file/d/15uo7mcgeyLsueiHNGoNpMrutypwTf4TU/view
 
 
+pt
+  https://drive.google.com/file/d/1nLwb9vFVrySbf9JJMDm9Kat0SUyFty_E/view?usp=share_link
+  
+
 
 tree
 yolov7
