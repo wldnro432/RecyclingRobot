@@ -10,28 +10,8 @@ pt
   
 
 
-tree
-yolov7
-├── cfg
-│   ├── baseline
-│   ├── deploy
-│   └── training
-│       └── yolov7.yaml
-├── data
-│   ├── test
-│   │   ├── images
-│   │   └── labels
-│   ├── train
-│   │   ├── images
-│   │   └── labels
-│   └── valid
-│   │   ├── images
-│   │   └── labels
-│   │── data.yaml
-│   └── hyp.scratch.custom.yaml
-│
-├──train.py
-├──yolov7.pt
+![image](https://user-images.githubusercontent.com/124943935/230807139-ca9c444b-24ad-4552-8538-071026e0f4cf.png)
+
 
 
   
