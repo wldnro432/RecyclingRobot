@@ -7,9 +7,6 @@ import time
 import threading
 import queue
 
-# HOST= '192.168.0.20'
-# PORT= 8654
-
 HOST = '192.168.219.103'
 PORT = 8486
 
@@ -36,17 +33,11 @@ encode_param = [int(cv2.IMWRITE_JPEG_QUALITY), 90]
 
 while True:
     
-    # key = cv2.waitKey(10)
-    
     if cv2.waitKey(10) == ord("q"):
         flag = True
-        print("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq")
     elif cv2.waitKey(10) == ord("s"):
         flag = False
-        print("sssssssssssssssssssssssssssssssssssss")
-        
-    print(flag)
-        
+
     ret, frame = cam.read()
     cv2.imshow("client", frame)
     cv2.waitKey(1)

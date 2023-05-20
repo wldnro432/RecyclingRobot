@@ -29,6 +29,8 @@ AGNOSTIC_NMS = False
 flag = False
 label = "9"
 
+START_DETECT = "111"
+
 def detect(img0):
     weights, imgsz = WEIGHTS, IMG_SIZE
     cls_num = 9
@@ -36,7 +38,6 @@ def detect(img0):
     # Initialize
     device = select_device(DEVICE)
     half = device.type != 'cpu'  # half precision only supported on CUDA
-    # print('device:', device)
 
     # Load model
     model = attempt_load(weights, map_location=device)  # load FP32 model
@@ -73,14 +74,12 @@ def detect(img0):
     # Inference
     t0 = time_synchronized()
     pred = model(img, augment=AUGMENT)[0]
-    # print('pred shape:', pred.shape)
 
     # Apply NMS
     pred = non_max_suppression(pred, CONF_THRES, IOU_THRES, classes=CLASSES, agnostic=AGNOSTIC_NMS)
 
     # Process detections
     det = pred[0]
-    # print('det shape:', det.shape)
 
     s = ''
     s += '%gx%g ' % img.shape[2:]  # print string
@@ -100,13 +99,6 @@ def detect(img0):
             cls_num = int(cls)
             plot_one_box(xyxy, img0, label=label, color=colors[int(cls)], line_thickness=3)
 
-        # print(f'Inferencing and Processing Done. ({time.time() - t0:.3f}s)')
-
-    # Stream results
-    # print(s)
-    # cv2.imshow(source, img0)
-    # cv2.waitKey(0)  # 1 millisecond
-
     return img0, cls_num
 
 def recvall(sock, count):
@@ -125,9 +117,6 @@ def show_image():
         cv2.imshow('ImageWindow', img)
         cv2.waitKey(1)
 
-
-
-
 def detect_image():
     while True:
         frame = que.get()
@@ -143,13 +132,9 @@ def detect_image():
 
 if __name__ == '__main__':
 
-    # HOST= '192.168.0.20'
-    # PORT= 8654
-
     HOST = '192.168.219.103'
     PORT = 8486
 
-    
     #TCP 사용
     s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
@@ -181,7 +166,7 @@ if __name__ == '__main__':
 
             print(msg)
 
-            if msg == "111":
+            if msg == START_DETECT:
                 flag = True
             else:
                 flag = False
