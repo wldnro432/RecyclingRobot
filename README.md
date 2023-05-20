@@ -1,11 +1,11 @@
 # RecyclingRobot
 
 
-dataset
+# dataset
   https://drive.google.com/file/d/15uo7mcgeyLsueiHNGoNpMrutypwTf4TU/view
 
 
-pt
+# pt
   https://drive.google.com/file/d/1R0cxcW2hDHdkPVM0kpz4cVnGTYJcIIzE/view?usp=share_link
   
 
@@ -17,7 +17,7 @@ pt
   
 
 
-train
+# train
   !python train.py --device 0 --batch-size 16 --epochs 100 --img 640 640 --data ./data/data/data.yaml --hyp data/hyp.scratch.custom.yaml --cfg cfg/training/yolov7.yaml --weights yolov7.pt --name yolov7-custom
 
 
